@@ -15,7 +15,34 @@
 		E1641E591E3A4B06007714F6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1641E571E3A4B06007714F6 /* Main.storyboard */; };
 		E1641E5B1E3A4B06007714F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E1641E5A1E3A4B06007714F6 /* Assets.xcassets */; };
 		E1641E5E1E3A4B06007714F6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1641E5C1E3A4B06007714F6 /* LaunchScreen.storyboard */; };
+		E1641E811E3A4CD0007714F6 /* ShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1641E801E3A4CD0007714F6 /* ShareViewController.m */; };
+		E1641E841E3A4CD0007714F6 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1641E821E3A4CD0007714F6 /* MainInterface.storyboard */; };
+		E1641E881E3A4CD0007714F6 /* Share Me.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = E1641E7D1E3A4CD0007714F6 /* Share Me.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E1641E861E3A4CD0007714F6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E1641E3D1E3A4B06007714F6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E1641E7C1E3A4CD0007714F6;
+			remoteInfo = "Share Me";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		E1641E8C1E3A4CD0007714F6 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				E1641E881E3A4CD0007714F6 /* Share Me.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		E1641E451E3A4B06007714F6 /* sharePDF.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sharePDF.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -32,10 +59,22 @@
 		E1641E5A1E3A4B06007714F6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E1641E5D1E3A4B06007714F6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E1641E5F1E3A4B06007714F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E1641E7D1E3A4CD0007714F6 /* Share Me.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Share Me.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E1641E7F1E3A4CD0007714F6 /* ShareViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShareViewController.h; sourceTree = "<group>"; };
+		E1641E801E3A4CD0007714F6 /* ShareViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShareViewController.m; sourceTree = "<group>"; };
+		E1641E831E3A4CD0007714F6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		E1641E851E3A4CD0007714F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		E1641E421E3A4B06007714F6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E1641E7A1E3A4CD0007714F6 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -49,6 +88,7 @@
 			isa = PBXGroup;
 			children = (
 				E1641E471E3A4B06007714F6 /* sharePDF */,
+				E1641E7E1E3A4CD0007714F6 /* Share Me */,
 				E1641E461E3A4B06007714F6 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -57,6 +97,7 @@
 			isa = PBXGroup;
 			children = (
 				E1641E451E3A4B06007714F6 /* sharePDF.app */,
+				E1641E7D1E3A4CD0007714F6 /* Share Me.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -89,6 +130,17 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		E1641E7E1E3A4CD0007714F6 /* Share Me */ = {
+			isa = PBXGroup;
+			children = (
+				E1641E7F1E3A4CD0007714F6 /* ShareViewController.h */,
+				E1641E801E3A4CD0007714F6 /* ShareViewController.m */,
+				E1641E821E3A4CD0007714F6 /* MainInterface.storyboard */,
+				E1641E851E3A4CD0007714F6 /* Info.plist */,
+			);
+			path = "Share Me";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -99,15 +151,34 @@
 				E1641E411E3A4B06007714F6 /* Sources */,
 				E1641E421E3A4B06007714F6 /* Frameworks */,
 				E1641E431E3A4B06007714F6 /* Resources */,
+				E1641E8C1E3A4CD0007714F6 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				E1641E871E3A4CD0007714F6 /* PBXTargetDependency */,
 			);
 			name = sharePDF;
 			productName = sharePDF;
 			productReference = E1641E451E3A4B06007714F6 /* sharePDF.app */;
 			productType = "com.apple.product-type.application";
+		};
+		E1641E7C1E3A4CD0007714F6 /* Share Me */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E1641E891E3A4CD0007714F6 /* Build configuration list for PBXNativeTarget "Share Me" */;
+			buildPhases = (
+				E1641E791E3A4CD0007714F6 /* Sources */,
+				E1641E7A1E3A4CD0007714F6 /* Frameworks */,
+				E1641E7B1E3A4CD0007714F6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Share Me";
+			productName = "Share Me";
+			productReference = E1641E7D1E3A4CD0007714F6 /* Share Me.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -119,6 +190,11 @@
 				ORGANIZATIONNAME = debiasej;
 				TargetAttributes = {
 					E1641E441E3A4B06007714F6 = {
+						CreatedOnToolsVersion = 8.2;
+						DevelopmentTeam = MTKLRYPBZZ;
+						ProvisioningStyle = Automatic;
+					};
+					E1641E7C1E3A4CD0007714F6 = {
 						CreatedOnToolsVersion = 8.2;
 						DevelopmentTeam = MTKLRYPBZZ;
 						ProvisioningStyle = Automatic;
@@ -139,6 +215,7 @@
 			projectRoot = "";
 			targets = (
 				E1641E441E3A4B06007714F6 /* sharePDF */,
+				E1641E7C1E3A4CD0007714F6 /* Share Me */,
 			);
 		};
 /* End PBXProject section */
@@ -151,6 +228,14 @@
 				E1641E5E1E3A4B06007714F6 /* LaunchScreen.storyboard in Resources */,
 				E1641E5B1E3A4B06007714F6 /* Assets.xcassets in Resources */,
 				E1641E591E3A4B06007714F6 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E1641E7B1E3A4CD0007714F6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E1641E841E3A4CD0007714F6 /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -169,7 +254,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E1641E791E3A4CD0007714F6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E1641E811E3A4CD0007714F6 /* ShareViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E1641E871E3A4CD0007714F6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E1641E7C1E3A4CD0007714F6 /* Share Me */;
+			targetProxy = E1641E861E3A4CD0007714F6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		E1641E571E3A4B06007714F6 /* Main.storyboard */ = {
@@ -186,6 +287,14 @@
 				E1641E5D1E3A4B06007714F6 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		E1641E821E3A4CD0007714F6 /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E1641E831E3A4CD0007714F6 /* Base */,
+			);
+			name = MainInterface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -285,6 +394,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = MTKLRYPBZZ;
 				INFOPLIST_FILE = sharePDF/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.debiasej.sharePDF;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -297,9 +407,36 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = MTKLRYPBZZ;
 				INFOPLIST_FILE = sharePDF/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.debiasej.sharePDF;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		E1641E8A1E3A4CD0007714F6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = MTKLRYPBZZ;
+				INFOPLIST_FILE = "Share Me/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.debiasej.sharePDF.Share-Me";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		E1641E8B1E3A4CD0007714F6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = MTKLRYPBZZ;
+				INFOPLIST_FILE = "Share Me/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.debiasej.sharePDF.Share-Me";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 			};
 			name = Release;
 		};
@@ -320,6 +457,15 @@
 			buildConfigurations = (
 				E1641E631E3A4B06007714F6 /* Debug */,
 				E1641E641E3A4B06007714F6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E1641E891E3A4CD0007714F6 /* Build configuration list for PBXNativeTarget "Share Me" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E1641E8A1E3A4CD0007714F6 /* Debug */,
+				E1641E8B1E3A4CD0007714F6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
