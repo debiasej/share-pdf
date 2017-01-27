@@ -9,9 +9,6 @@
 /* Begin PBXBuildFile section */
 		E1641E4A1E3A4B06007714F6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E1641E491E3A4B06007714F6 /* main.m */; };
 		E1641E4D1E3A4B06007714F6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E1641E4C1E3A4B06007714F6 /* AppDelegate.m */; };
-		E1641E501E3A4B06007714F6 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1641E4F1E3A4B06007714F6 /* RootViewController.m */; };
-		E1641E531E3A4B06007714F6 /* DataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1641E521E3A4B06007714F6 /* DataViewController.m */; };
-		E1641E561E3A4B06007714F6 /* ModelController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1641E551E3A4B06007714F6 /* ModelController.m */; };
 		E1641E591E3A4B06007714F6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1641E571E3A4B06007714F6 /* Main.storyboard */; };
 		E1641E5B1E3A4B06007714F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E1641E5A1E3A4B06007714F6 /* Assets.xcassets */; };
 		E1641E5E1E3A4B06007714F6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1641E5C1E3A4B06007714F6 /* LaunchScreen.storyboard */; };
@@ -50,12 +47,6 @@
 		E1641E491E3A4B06007714F6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E1641E4B1E3A4B06007714F6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		E1641E4C1E3A4B06007714F6 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		E1641E4E1E3A4B06007714F6 /* RootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
-		E1641E4F1E3A4B06007714F6 /* RootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
-		E1641E511E3A4B06007714F6 /* DataViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataViewController.h; sourceTree = "<group>"; };
-		E1641E521E3A4B06007714F6 /* DataViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DataViewController.m; sourceTree = "<group>"; };
-		E1641E541E3A4B06007714F6 /* ModelController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ModelController.h; sourceTree = "<group>"; };
-		E1641E551E3A4B06007714F6 /* ModelController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ModelController.m; sourceTree = "<group>"; };
 		E1641E581E3A4B06007714F6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E1641E5A1E3A4B06007714F6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E1641E5D1E3A4B06007714F6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -113,12 +104,6 @@
 				E1641E8E1E3B29C9007714F6 /* sharePDF.entitlements */,
 				E1641E4B1E3A4B06007714F6 /* AppDelegate.h */,
 				E1641E4C1E3A4B06007714F6 /* AppDelegate.m */,
-				E1641E4E1E3A4B06007714F6 /* RootViewController.h */,
-				E1641E4F1E3A4B06007714F6 /* RootViewController.m */,
-				E1641E511E3A4B06007714F6 /* DataViewController.h */,
-				E1641E521E3A4B06007714F6 /* DataViewController.m */,
-				E1641E541E3A4B06007714F6 /* ModelController.h */,
-				E1641E551E3A4B06007714F6 /* ModelController.m */,
 				E1641E571E3A4B06007714F6 /* Main.storyboard */,
 				E1641E5A1E3A4B06007714F6 /* Assets.xcassets */,
 				E1641E5C1E3A4B06007714F6 /* LaunchScreen.storyboard */,
@@ -265,12 +250,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E1641E531E3A4B06007714F6 /* DataViewController.m in Sources */,
 				E1641E4D1E3A4B06007714F6 /* AppDelegate.m in Sources */,
-				E1641E561E3A4B06007714F6 /* ModelController.m in Sources */,
 				E1641E911E3B38EC007714F6 /* SharePDFViewController.m in Sources */,
 				E1641E4A1E3A4B06007714F6 /* main.m in Sources */,
-				E1641E501E3A4B06007714F6 /* RootViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
