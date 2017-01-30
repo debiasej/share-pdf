@@ -7,6 +7,8 @@
 //
 
 #import "ShareViewController.h"
+#import "NSFileManager+FileUrlForDocumentNamed.h"
+#import "PdfDocument.h"
 
 static NSString *const appGroupId = @"group.debiasej.sharePDF";
 static NSString *const pfdFileExtension = @"com.adobe.pdf";
@@ -15,6 +17,8 @@ static NSString *const dictKey = @"dictPdf";
 @interface ShareViewController () {
     NSExtensionItem *extensionItem;
     NSUserDefaults *sharedUserDefaults;
+    NSFileManager *fileManager;
+    PDFDocument *pdfDocument;
 }
 
 @end
@@ -26,7 +30,7 @@ static NSString *const dictKey = @"dictPdf";
     return YES;
 }
 
-- (void)didSelectPost {
+- (void)didSelectPost2 {
     // This is called after the user selects Post. Do the upload of contentText and/or NSExtensionContext attachments.
     
     extensionItem = self.extensionContext.inputItems.firstObject;
@@ -41,21 +45,46 @@ static NSString *const dictKey = @"dictPdf";
             
             if([(NSObject*)item isKindOfClass:[NSURL class]]) {
                 pdfData = [NSData dataWithContentsOfURL:(NSURL*)item];
+                NSLog(@"Path origen: %@", item);
             }
-
-            NSDictionary *dict = @{
-                                   @"pdfData" : pdfData,
-                                   @"name" : [(NSURL *)item lastPathComponent]
-                                   };
             
-            sharedUserDefaults = [[NSUserDefaults alloc] initWithSuiteName:appGroupId];
-            [sharedUserDefaults setObject:dict forKey:dictKey];
-            [sharedUserDefaults synchronize];
+            NSString *fileName = [(NSURL *)item lastPathComponent];
+            //[self savePdfUsingSharedUserDefaults:pdfData withName:fileName];
+            [self savePdfUsingFileSystem:pdfData withName:fileName];
+            
+            // Inform the host that we're done, so it un-blocks its UI. Note: Alternatively you could call super's -didSelectPost, which will similarly complete the extension context.
+            [self.extensionContext completeRequestReturningItems:@[] completionHandler:nil];
         }];
     }
+}
+
+- (IBAction)shareButtonTapped:(id)sender {
+    [self didSelectPost2];
+}
+
+-(void) savePdfUsingFileSystem:(NSData *) pdfData withName:(NSString *) fileName {
     
-    // Inform the host that we're done, so it un-blocks its UI. Note: Alternatively you could call super's -didSelectPost, which will similarly complete the extension context.
-    [self.extensionContext completeRequestReturningItems:@[] completionHandler:nil];
+    fileManager = [NSFileManager defaultManager];
+    NSURL *pdfURL = [fileManager fileUrlForDocumentNamed:fileName];
+    
+    NSLog(@"Path destino: %@", pdfURL);
+    
+    pdfDocument = [[PDFDocument alloc] initWithFileURL:pdfURL];
+    [pdfDocument saveDocumentData:pdfData];
+    
+}
+
+-(void) savePdfUsingSharedUserDefaults:(NSData *) pdfData withName:(NSString *) fileName {
+    
+    NSDictionary *dict = @{
+                           @"pdfData" : pdfData,
+                           @"name" : fileName
+                           };
+    
+    sharedUserDefaults = [[NSUserDefaults alloc] initWithSuiteName:appGroupId];
+    [sharedUserDefaults setObject:dict forKey:dictKey];
+    [sharedUserDefaults synchronize];
+    
 }
 
 - (NSArray *)configurationItems {

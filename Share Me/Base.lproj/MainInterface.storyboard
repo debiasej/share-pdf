@@ -1,14 +1,17 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="j1y-V4-xli">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="j1y-V4-xli">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Share View Controller-->
         <scene sceneID="ceB-am-kn3">
             <objects>
-                <viewController id="j1y-V4-xli" customClass="ShareViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="j1y-V4-xli" customClass="ShareViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="8bI-gs-bmD"/>
                         <viewControllerLayoutGuide type="bottom" id="d5i-Ba-RvD"/>
@@ -16,11 +19,66 @@
                     <view key="view" opaque="NO" contentMode="scaleToFill" id="wbc-yd-nQP">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cVc-1W-GGw">
+                                <rect key="frame" x="0.0" y="20" width="375" height="60"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Share Me" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e57-Lm-nGI">
+                                        <rect key="frame" x="20" y="7" width="335" height="37"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="27"/>
+                                        <color key="textColor" red="0.79215686269999996" green="0.95294117649999999" blue="0.066666666669999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.46160434830000002" green="0.30469471770000001" blue="0.1525366702" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="e57-Lm-nGI" firstAttribute="centerY" secondItem="cVc-1W-GGw" secondAttribute="centerY" constant="-5" id="2PF-yK-psf"/>
+                                    <constraint firstItem="e57-Lm-nGI" firstAttribute="leading" secondItem="cVc-1W-GGw" secondAttribute="leading" constant="20" id="BOw-8R-Msd"/>
+                                    <constraint firstAttribute="height" constant="60" id="bUi-lf-xZ7"/>
+                                    <constraint firstAttribute="trailing" secondItem="e57-Lm-nGI" secondAttribute="trailing" constant="20" id="oSo-bR-e2G"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="clG-eN-ujt">
+                                <rect key="frame" x="0.0" y="80" width="375" height="587"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Zi-Da-fgw">
+                                        <rect key="frame" x="20" y="40" width="335" height="45"/>
+                                        <color key="backgroundColor" red="0.79215686269999996" green="0.95294117649999999" blue="0.066666666669999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="45" id="c9c-vZ-6qT"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
+                                        <state key="normal" title="Share document">
+                                            <color key="titleColor" red="0.46160434830000002" green="0.30469471770000001" blue="0.1525366702" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="shareButtonTapped:" destination="j1y-V4-xli" eventType="touchUpInside" id="jAV-M3-fAp"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="2Zi-Da-fgw" firstAttribute="top" secondItem="clG-eN-ujt" secondAttribute="top" constant="40" id="exD-bk-pYf"/>
+                                    <constraint firstAttribute="trailing" secondItem="2Zi-Da-fgw" secondAttribute="trailing" constant="20" id="hGu-Pb-WMp"/>
+                                    <constraint firstItem="2Zi-Da-fgw" firstAttribute="leading" secondItem="clG-eN-ujt" secondAttribute="leading" constant="20" id="yCO-qT-bBY"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.46160434830000002" green="0.30469471770000001" blue="0.1525366702" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="cVc-1W-GGw" firstAttribute="top" secondItem="8bI-gs-bmD" secondAttribute="bottom" id="1Tf-rN-ZTH"/>
+                            <constraint firstItem="cVc-1W-GGw" firstAttribute="leading" secondItem="wbc-yd-nQP" secondAttribute="leading" id="2Eb-uC-3aN"/>
+                            <constraint firstAttribute="trailing" secondItem="clG-eN-ujt" secondAttribute="trailing" id="2cQ-zp-OJU"/>
+                            <constraint firstAttribute="trailing" secondItem="cVc-1W-GGw" secondAttribute="trailing" id="RwH-js-yf1"/>
+                            <constraint firstItem="clG-eN-ujt" firstAttribute="leading" secondItem="wbc-yd-nQP" secondAttribute="leading" id="ecl-wm-uSE"/>
+                            <constraint firstItem="d5i-Ba-RvD" firstAttribute="top" secondItem="clG-eN-ujt" secondAttribute="bottom" id="hzZ-hV-spq"/>
+                            <constraint firstItem="clG-eN-ujt" firstAttribute="top" secondItem="cVc-1W-GGw" secondAttribute="bottom" id="wWl-cj-9ts"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CEy-Cv-SGf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="137.18140929535232"/>
         </scene>
     </scenes>
 </document>
