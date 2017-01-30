@@ -23,7 +23,7 @@
 }
 
 - (BOOL)loadFromContents:(id)fileContents ofType:(NSString *)typeName error:(NSError **)outError {
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0ul), ^{
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         if ([fileContents length] > 0) {
             self.contents = [[NSData alloc] initWithData:fileContents];
         } else {
@@ -35,14 +35,10 @@
 }
 
 
-- (void)saveDocumentData:(NSData *)newData {
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0ul), ^{
-        NSData *oldData = self.contents;
-        self.contents = [newData copy];
-        
-        // Register the undo operation
-        [self.undoManager setActionName:@"Data Change"];
-        [self.undoManager registerUndoWithTarget:self selector:@selector(saveDocumentData:) object:oldData];
+- (void)saveDocumentData:(NSData *)data {
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        self.contents = [data copy];
+        [self.contents writeToURL:self.fileURL atomically:YES];
     });
 }
 
