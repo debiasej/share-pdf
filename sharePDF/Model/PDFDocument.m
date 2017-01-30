@@ -8,18 +8,16 @@
 
 #import "PDFDocument.h"
 
+
 @implementation PDFDocument
 
 - (id)initWithFileURL:(NSURL *)url {
     self = [super initWithFileURL:url];
     if (self) {
         self.contents = [[NSData alloc] init];
+        self.title = [url lastPathComponent];
     }
     return self;
-}
-
-- (NSString *)localizedName {
-    return [self.fileURL lastPathComponent];
 }
 
 - (BOOL)loadFromContents:(id)fileContents ofType:(NSString *)typeName error:(NSError **)outError {
@@ -34,11 +32,13 @@
     return YES;
 }
 
-
 - (void)saveDocumentData:(NSData *)data {
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         self.contents = [data copy];
-        [self.contents writeToURL:self.fileURL atomically:YES];
+        BOOL success = [self.contents writeToURL:self.fileURL atomically:YES];
+        
+        if (!success)
+            NSLog(@"ERROR writting the file!");
     });
 }
 

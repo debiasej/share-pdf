@@ -10,6 +10,7 @@
 
 @interface PDFDocument : UIDocument
 
+@property (nonatomic) NSString *title;
 @property (strong) NSData *contents;
 
 - (id)initWithFileURL:(NSURL *)url;
