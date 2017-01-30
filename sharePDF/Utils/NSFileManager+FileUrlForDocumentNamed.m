@@ -9,8 +9,6 @@
 #import "NSFileManager+FileUrlForDocumentNamed.h"
 
 static NSString *const appGroupId = @"group.debiasej.sharePDF";
-static NSString *const pfdFileExtension = @"pdf";
-static NSString *const pfdFileExtensionWithDot = @".pdf";
 
 @implementation NSFileManager (FileUrlForDocumentNamed)
 
@@ -22,7 +20,6 @@ static NSString *const pfdFileExtensionWithDot = @".pdf";
     
     if (baseURL && fileName && [fileName length] > 0) {
         fileURL = [baseURL URLByAppendingPathComponent:fileName];
-        //fileURL = [fileURL URLByAppendingPathExtension:pfdFileExtension];
     }
     
     return fileURL;
@@ -42,7 +39,6 @@ static NSString *const pfdFileExtensionWithDot = @".pdf";
         if (documentURLs && documentURLs.count > 0)
             pdfDocuments = [self arrayOfPDFDocumentsFromArrayOfFileNames: documentURLs];
     }
-    
     return pdfDocuments;
 }
 
@@ -50,13 +46,12 @@ static NSString *const pfdFileExtensionWithDot = @".pdf";
     
     NSURL *storagePathUrl = nil;
     NSURL* containerURL = [self containerURLForSecurityApplicationGroupIdentifier:appGroupId];
-    NSLog(@"%@", containerURL);
+    NSLog(@"appGroupContainerURL: %@", containerURL);
     
     if (containerURL) {
         storagePathUrl = [self createDirIfNotExists:containerURL];
     }
     
-    //return storagePathUrl;
     return containerURL;
 }
 
@@ -86,9 +81,9 @@ static NSString *const pfdFileExtensionWithDot = @".pdf";
         if ( [self fileExistsAtPath:url.path isDirectory:&isDir] && !isDir ) {
             PDFDocument *pdf = [[PDFDocument alloc] initWithFileURL:url];
             [pdfDocuments addObject:pdf];
+            //TODO: Get NSData from a NSURL and save to content
         }
     }
-    
     return pdfDocuments;
 }
 

@@ -66,9 +66,7 @@ static NSString *const dictKey = @"dictPdf";
     
     fileManager = [NSFileManager defaultManager];
     NSURL *pdfURL = [fileManager fileUrlForDocumentNamed:fileName];
-    
-    NSLog(@"Path destino: %@", pdfURL);
-    
+        
     pdfDocument = [[PDFDocument alloc] initWithFileURL:pdfURL];
     [pdfDocument saveDocumentData:pdfData];
     
