@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E11CC0311E40932600650F97 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E1641E5A1E3A4B06007714F6 /* Assets.xcassets */; };
+		E11CC0321E40938B00650F97 /* Assets.xcassets in Sources */ = {isa = PBXBuildFile; fileRef = E1641E5A1E3A4B06007714F6 /* Assets.xcassets */; };
 		E12A2B431E3F3FAD00C0E60F /* NSFileManager+FileUrlForDocumentNamed.m in Sources */ = {isa = PBXBuildFile; fileRef = E1641EA91E3B78C9007714F6 /* NSFileManager+FileUrlForDocumentNamed.m */; };
 		E1641E4A1E3A4B06007714F6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E1641E491E3A4B06007714F6 /* main.m */; };
 		E1641E4D1E3A4B06007714F6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E1641E4C1E3A4B06007714F6 /* AppDelegate.m */; };
@@ -293,6 +295,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E11CC0311E40932600650F97 /* Assets.xcassets in Resources */,
 				E1641E841E3A4CD0007714F6 /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -316,6 +319,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E11CC0321E40938B00650F97 /* Assets.xcassets in Sources */,
 				E12A2B431E3F3FAD00C0E60F /* NSFileManager+FileUrlForDocumentNamed.m in Sources */,
 				E1641EB91E3F21AB007714F6 /* PDFDocument.m in Sources */,
 				E1641E811E3A4CD0007714F6 /* ShareViewController.m in Sources */,
@@ -482,6 +486,8 @@
 		E1641E8A1E3A4CD0007714F6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "";
 				CODE_SIGN_ENTITLEMENTS = "Share Me/Share Me.entitlements";
 				DEVELOPMENT_TEAM = MTKLRYPBZZ;
 				INFOPLIST_FILE = "Share Me/Info.plist";
@@ -496,6 +502,8 @@
 		E1641E8B1E3A4CD0007714F6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "";
 				CODE_SIGN_ENTITLEMENTS = "Share Me/Share Me.entitlements";
 				DEVELOPMENT_TEAM = MTKLRYPBZZ;
 				INFOPLIST_FILE = "Share Me/Info.plist";
