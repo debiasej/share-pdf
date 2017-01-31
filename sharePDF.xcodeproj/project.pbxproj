@@ -50,7 +50,7 @@
 
 /* Begin PBXFileReference section */
 		E11CC02E1E40763000650F97 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		E1641E451E3A4B06007714F6 /* sharePDF.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sharePDF.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E1641E451E3A4B06007714F6 /* Share PDF.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Share PDF.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1641E491E3A4B06007714F6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E1641E4B1E3A4B06007714F6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		E1641E4C1E3A4B06007714F6 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -112,7 +112,7 @@
 		E1641E461E3A4B06007714F6 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E1641E451E3A4B06007714F6 /* sharePDF.app */,
+				E1641E451E3A4B06007714F6 /* Share PDF.app */,
 				E1641E7D1E3A4CD0007714F6 /* Share Me.appex */,
 			);
 			name = Products;
@@ -194,9 +194,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		E1641E441E3A4B06007714F6 /* sharePDF */ = {
+		E1641E441E3A4B06007714F6 /* Share PDF */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E1641E621E3A4B06007714F6 /* Build configuration list for PBXNativeTarget "sharePDF" */;
+			buildConfigurationList = E1641E621E3A4B06007714F6 /* Build configuration list for PBXNativeTarget "Share PDF" */;
 			buildPhases = (
 				E1641E411E3A4B06007714F6 /* Sources */,
 				E1641E421E3A4B06007714F6 /* Frameworks */,
@@ -208,9 +208,9 @@
 			dependencies = (
 				E1641E871E3A4CD0007714F6 /* PBXTargetDependency */,
 			);
-			name = sharePDF;
+			name = "Share PDF";
 			productName = sharePDF;
-			productReference = E1641E451E3A4B06007714F6 /* sharePDF.app */;
+			productReference = E1641E451E3A4B06007714F6 /* Share PDF.app */;
 			productType = "com.apple.product-type.application";
 		};
 		E1641E7C1E3A4CD0007714F6 /* Share Me */ = {
@@ -274,7 +274,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				E1641E441E3A4B06007714F6 /* sharePDF */,
+				E1641E441E3A4B06007714F6 /* Share PDF */,
 				E1641E7C1E3A4CD0007714F6 /* Share Me */,
 			);
 		};
@@ -464,7 +464,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				"OTHER_LDFLAGS[arch=*]" = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = com.debiasej.sharePDF;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.debiasej.Share-PDF";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -478,7 +478,7 @@
 				INFOPLIST_FILE = sharePDF/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.debiasej.sharePDF;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.debiasej.Share-PDF";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -493,7 +493,7 @@
 				INFOPLIST_FILE = "Share Me/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.debiasej.sharePDF.Share-Me";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.debiasej.Share-PDF.Share-Me";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};
@@ -509,7 +509,7 @@
 				INFOPLIST_FILE = "Share Me/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.debiasej.sharePDF.Share-Me";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.debiasej.Share-PDF.Share-Me";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};
@@ -527,7 +527,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E1641E621E3A4B06007714F6 /* Build configuration list for PBXNativeTarget "sharePDF" */ = {
+		E1641E621E3A4B06007714F6 /* Build configuration list for PBXNativeTarget "Share PDF" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E1641E631E3A4B06007714F6 /* Debug */,
