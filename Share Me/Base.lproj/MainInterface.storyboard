@@ -20,65 +20,82 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cVc-1W-GGw">
-                                <rect key="frame" x="0.0" y="20" width="375" height="60"/>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ISf-Rr-mYF">
+                                <rect key="frame" x="30" y="241" width="315" height="185"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Share Me" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e57-Lm-nGI">
-                                        <rect key="frame" x="20" y="7" width="335" height="37"/>
-                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="27"/>
-                                        <color key="textColor" red="0.79215686269999996" green="0.95294117649999999" blue="0.066666666669999999" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" red="0.46160434830000002" green="0.30469471770000001" blue="0.1525366702" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstItem="e57-Lm-nGI" firstAttribute="centerY" secondItem="cVc-1W-GGw" secondAttribute="centerY" constant="-5" id="2PF-yK-psf"/>
-                                    <constraint firstItem="e57-Lm-nGI" firstAttribute="leading" secondItem="cVc-1W-GGw" secondAttribute="leading" constant="20" id="BOw-8R-Msd"/>
-                                    <constraint firstAttribute="height" constant="60" id="bUi-lf-xZ7"/>
-                                    <constraint firstAttribute="trailing" secondItem="e57-Lm-nGI" secondAttribute="trailing" constant="20" id="oSo-bR-e2G"/>
-                                </constraints>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="clG-eN-ujt">
-                                <rect key="frame" x="0.0" y="80" width="375" height="587"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Zi-Da-fgw">
-                                        <rect key="frame" x="20" y="40" width="335" height="45"/>
-                                        <color key="backgroundColor" red="0.79215686269999996" green="0.95294117649999999" blue="0.066666666669999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cVc-1W-GGw">
+                                        <rect key="frame" x="0.0" y="0.0" width="315" height="60"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Share Me" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e57-Lm-nGI">
+                                                <rect key="frame" x="20" y="11.5" width="275" height="37"/>
+                                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="27"/>
+                                                <color key="textColor" red="0.79215686269999996" green="0.95294117649999999" blue="0.066666666669999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.46160434830000002" green="0.30469471770000001" blue="0.1525366702" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="45" id="c9c-vZ-6qT"/>
+                                            <constraint firstItem="e57-Lm-nGI" firstAttribute="centerY" secondItem="cVc-1W-GGw" secondAttribute="centerY" id="2PF-yK-psf"/>
+                                            <constraint firstItem="e57-Lm-nGI" firstAttribute="leading" secondItem="cVc-1W-GGw" secondAttribute="leading" constant="20" id="BOw-8R-Msd"/>
+                                            <constraint firstAttribute="height" constant="60" id="bUi-lf-xZ7"/>
+                                            <constraint firstAttribute="trailing" secondItem="e57-Lm-nGI" secondAttribute="trailing" constant="20" id="oSo-bR-e2G"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
-                                        <state key="normal" title="Share document">
-                                            <color key="titleColor" red="0.46160434830000002" green="0.30469471770000001" blue="0.1525366702" alpha="1" colorSpace="calibratedRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="shareButtonTapped:" destination="j1y-V4-xli" eventType="touchUpInside" id="jAV-M3-fAp"/>
-                                        </connections>
-                                    </button>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="clG-eN-ujt">
+                                        <rect key="frame" x="0.0" y="60" width="315" height="125"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Zi-Da-fgw">
+                                                <rect key="frame" x="40" y="40" width="235" height="45"/>
+                                                <color key="backgroundColor" red="0.79215686269999996" green="0.95294117649999999" blue="0.066666666669999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="45" id="c9c-vZ-6qT"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
+                                                <state key="normal" title="Share this document">
+                                                    <color key="titleColor" red="0.46160434830000002" green="0.30469471770000001" blue="0.1525366702" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="shareButtonTapped:" destination="j1y-V4-xli" eventType="touchUpInside" id="jAV-M3-fAp"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="2Zi-Da-fgw" secondAttribute="bottom" constant="40" id="GDE-wk-Gto"/>
+                                            <constraint firstItem="2Zi-Da-fgw" firstAttribute="top" secondItem="clG-eN-ujt" secondAttribute="top" constant="40" id="exD-bk-pYf"/>
+                                            <constraint firstAttribute="trailing" secondItem="2Zi-Da-fgw" secondAttribute="trailing" constant="40" id="hGu-Pb-WMp"/>
+                                            <constraint firstItem="2Zi-Da-fgw" firstAttribute="leading" secondItem="clG-eN-ujt" secondAttribute="leading" constant="40" id="yCO-qT-bBY"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="2Zi-Da-fgw" firstAttribute="top" secondItem="clG-eN-ujt" secondAttribute="top" constant="40" id="exD-bk-pYf"/>
-                                    <constraint firstAttribute="trailing" secondItem="2Zi-Da-fgw" secondAttribute="trailing" constant="20" id="hGu-Pb-WMp"/>
-                                    <constraint firstItem="2Zi-Da-fgw" firstAttribute="leading" secondItem="clG-eN-ujt" secondAttribute="leading" constant="20" id="yCO-qT-bBY"/>
+                                    <constraint firstItem="clG-eN-ujt" firstAttribute="leading" secondItem="ISf-Rr-mYF" secondAttribute="leading" id="4Hq-n4-VNc"/>
+                                    <constraint firstItem="clG-eN-ujt" firstAttribute="top" secondItem="cVc-1W-GGw" secondAttribute="bottom" id="BL5-BW-84b"/>
+                                    <constraint firstItem="cVc-1W-GGw" firstAttribute="top" secondItem="ISf-Rr-mYF" secondAttribute="top" id="E22-4x-i1P"/>
+                                    <constraint firstAttribute="trailing" secondItem="cVc-1W-GGw" secondAttribute="trailing" id="Vcc-Gj-nw3"/>
+                                    <constraint firstAttribute="bottom" secondItem="clG-eN-ujt" secondAttribute="bottom" id="ecs-Pc-PDb"/>
+                                    <constraint firstItem="cVc-1W-GGw" firstAttribute="leading" secondItem="ISf-Rr-mYF" secondAttribute="leading" id="jIO-Yc-YpF"/>
+                                    <constraint firstAttribute="trailing" secondItem="clG-eN-ujt" secondAttribute="trailing" id="ptv-Ng-3av"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" red="0.46160434830000002" green="0.30469471770000001" blue="0.1525366702" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="cVc-1W-GGw" firstAttribute="top" secondItem="8bI-gs-bmD" secondAttribute="bottom" id="1Tf-rN-ZTH"/>
-                            <constraint firstItem="cVc-1W-GGw" firstAttribute="leading" secondItem="wbc-yd-nQP" secondAttribute="leading" id="2Eb-uC-3aN"/>
-                            <constraint firstAttribute="trailing" secondItem="clG-eN-ujt" secondAttribute="trailing" id="2cQ-zp-OJU"/>
-                            <constraint firstAttribute="trailing" secondItem="cVc-1W-GGw" secondAttribute="trailing" id="RwH-js-yf1"/>
-                            <constraint firstItem="clG-eN-ujt" firstAttribute="leading" secondItem="wbc-yd-nQP" secondAttribute="leading" id="ecl-wm-uSE"/>
-                            <constraint firstItem="d5i-Ba-RvD" firstAttribute="top" secondItem="clG-eN-ujt" secondAttribute="bottom" id="hzZ-hV-spq"/>
-                            <constraint firstItem="clG-eN-ujt" firstAttribute="top" secondItem="cVc-1W-GGw" secondAttribute="bottom" id="wWl-cj-9ts"/>
+                            <constraint firstItem="ISf-Rr-mYF" firstAttribute="centerY" secondItem="wbc-yd-nQP" secondAttribute="centerY" id="XlH-Fn-l0x"/>
+                            <constraint firstItem="ISf-Rr-mYF" firstAttribute="leading" secondItem="wbc-yd-nQP" secondAttribute="leading" constant="30" id="YGL-19-3mL"/>
+                            <constraint firstAttribute="trailing" secondItem="ISf-Rr-mYF" secondAttribute="trailing" constant="30" id="j8O-7v-yqf"/>
                         </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CEy-Cv-SGf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="136.80000000000001" y="137.18140929535232"/>
+            <point key="canvasLocation" x="-364" y="102"/>
         </scene>
     </scenes>
 </document>

@@ -47,6 +47,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		E11CC02E1E40763000650F97 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		E1641E451E3A4B06007714F6 /* sharePDF.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sharePDF.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1641E491E3A4B06007714F6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E1641E4B1E3A4B06007714F6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -88,12 +89,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E11CC02D1E40763000650F97 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E11CC02E1E40763000650F97 /* QuartzCore.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		E1641E3C1E3A4B06007714F6 = {
 			isa = PBXGroup;
 			children = (
 				E1641E471E3A4B06007714F6 /* sharePDF */,
 				E1641E7E1E3A4CD0007714F6 /* Share Me */,
 				E1641E461E3A4B06007714F6 /* Products */,
+				E11CC02D1E40763000650F97 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};

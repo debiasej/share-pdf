@@ -30,7 +30,7 @@ static NSString *const dictKey = @"dictPdf";
     return YES;
 }
 
-- (void)didSelectPost2 {
+- (void)didSelectPost {
     // This is called after the user selects Post. Do the upload of contentText and/or NSExtensionContext attachments.
     
     extensionItem = self.extensionContext.inputItems.firstObject;
@@ -59,7 +59,7 @@ static NSString *const dictKey = @"dictPdf";
 }
 
 - (IBAction)shareButtonTapped:(id)sender {
-    [self didSelectPost2];
+    [self didSelectPost];
 }
 
 -(void) savePdfUsingFileSystem:(NSData *) pdfData withName:(NSString *) fileName {
@@ -82,7 +82,6 @@ static NSString *const dictKey = @"dictPdf";
     sharedUserDefaults = [[NSUserDefaults alloc] initWithSuiteName:appGroupId];
     [sharedUserDefaults setObject:dict forKey:dictKey];
     [sharedUserDefaults synchronize];
-    
 }
 
 - (NSArray *)configurationItems {
