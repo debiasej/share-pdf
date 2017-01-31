@@ -16,7 +16,7 @@ static NSString *const dictKey = @"dictPdf";
 
 @property (weak, nonatomic) IBOutlet UITableView *tableview;
 @property (strong, nonatomic) NSMutableArray *pdfList;
-
+@property (strong, nonatomic) UITableViewController *tableViewController;
 
 @end
 
@@ -25,6 +25,7 @@ static NSString *const dictKey = @"dictPdf";
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [self addPullAndRefreshControl];
     self.pdfList =  [NSMutableArray new];
 }
 
@@ -35,16 +36,28 @@ static NSString *const dictKey = @"dictPdf";
     [self readPDFsFromFileSystem];
 }
 
-- (void)readPDFsFromUserDefaults {
-    NSUserDefaults *defaults = [[NSUserDefaults alloc] initWithSuiteName:appGroupId];
-    NSDictionary *dict = [defaults valueForKey:dictKey];
+- (void) addPullAndRefreshControl {
     
-    if (dict) {
-        //NSData *pdfData = [dict valueForKey:@"pdfData"];
-        NSString *fileName = [dict valueForKey:@"name"];
-        
-        [self.pdfList addObject:fileName];
-    }
+    UIRefreshControl *refreshControl = [self createRefreshControl];
+    self.tableViewController = [[UITableViewController alloc] init];
+    self.tableViewController.tableView = self.tableview;
+    self.tableViewController.refreshControl = refreshControl;
+}
+
+- (UIRefreshControl *) createRefreshControl {
+    UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
+    refreshControl.tintColor = [UIColor grayColor];
+    refreshControl.attributedTitle = [[NSAttributedString alloc] initWithString:@"Pull to Refresh"];
+    [refreshControl addTarget:self action:@selector(refreshData) forControlEvents:UIControlEventValueChanged];
+    
+    return refreshControl;
+}
+
+-(void)refreshData {
+    
+    [self readPDFsFromFileSystem];
+    [self.tableview reloadData];
+    [self.tableViewController.refreshControl endRefreshing];
 }
 
 - (void) readPDFsFromFileSystem {
@@ -52,16 +65,26 @@ static NSString *const dictKey = @"dictPdf";
     self.pdfList = [[fileManager getAllPDFsInFileSystem] mutableCopy];
 }
 
+- (void)readPDFsFromUserDefaults {
+    NSUserDefaults *defaults = [[NSUserDefaults alloc] initWithSuiteName:appGroupId];
+    NSDictionary *dict = [defaults valueForKey:dictKey];
+    
+    if (dict) {
+        //NSData *pdfData = [dict valueForKey:@"pdfData"];
+        NSString *fileName = [dict valueForKey:@"name"];
+        [self.pdfList addObject:fileName];
+    }
+}
+
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
 }
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.pdfList.count;
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *cellIdentifier = @"myCell";
     UITableViewCell *cell = [self.tableview dequeueReusableCellWithIdentifier:cellIdentifier];
     
