@@ -8,6 +8,7 @@
 
 #import "SharePDFViewController.h"
 #import "NSFileManager+FileUrlForDocumentNamed.h"
+#import "ShareWebViewController.h"
 
 static NSString *const appGroupId = @"group.debiasej.sharePDF";
 static NSString *const dictKey = @"dictPdf";
@@ -100,5 +101,20 @@ static NSString *const dictKey = @"dictPdf";
     PDFDocument *pdf = (PDFDocument *)[self.pdfList objectAtIndex:index];
     return pdf.title;
 }
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+ 
+    [self performSegueWithIdentifier:@"fromCell" sender:nil];
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
+    if([[segue identifier] isEqualToString:@"fromCell"]) {
+        
+        ShareWebViewController* webViewController = segue.destinationViewController;
+        webViewController.pdfDocument = @"I am PDF document!";
+    }
+}
+
 
 @end
