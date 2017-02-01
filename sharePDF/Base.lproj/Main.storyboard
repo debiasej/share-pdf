@@ -58,19 +58,28 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="edn-Mh-xob">
-                                <rect key="frame" x="132" y="308" width="111" height="74"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KJA-uG-lDm">
+                                <rect key="frame" x="20" y="597" width="335" height="50"/>
+                                <color key="backgroundColor" red="0.31372549020000001" green="0.71764705880000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="bBc-YW-NzB"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="26"/>
+                                <state key="normal" title="Load Documents">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="loadDocumentsButtonTapped:" destination="Vaw-DE-Thk" eventType="touchUpInside" id="z9k-f1-OKE"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="KJA-uG-lDm" firstAttribute="leading" secondItem="avQ-8V-lF6" secondAttribute="leading" constant="20" id="HB8-88-HOi"/>
+                            <constraint firstAttribute="trailing" secondItem="KJA-uG-lDm" secondAttribute="trailing" constant="20" id="fSq-o8-vrZ"/>
+                            <constraint firstItem="fgO-of-qQN" firstAttribute="top" secondItem="KJA-uG-lDm" secondAttribute="bottom" constant="20" id="nCO-ow-szg"/>
+                        </constraints>
                     </view>
-                    <connections>
-                        <outlet property="documentTitle" destination="edn-Mh-xob" id="kMj-8j-soi"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BQt-vq-3vB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

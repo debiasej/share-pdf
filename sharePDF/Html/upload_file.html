@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        
+        <h1>List of documents saved in the sandbox:</h1>
+        <div id="documentList"></div>
+        
+        <script>
+            function loadComponent(fileNamesArray) {
+                    
+                fileNamesArray.forEach(function(element, index) {
+                    $('#documentList').append("<a id='doc-" + index + "'>" + element + "</a>");
+                });
+            }
+                             
+            /*function loadComponent(fileNamesArray) {
+                
+                var documentListElement =
+                document.getElementById("documentList");
+                
+                var documentList =
+                fileNamesArray.forEach(function(element, index) {
+                   var temp = document.createElement("a");
+                   temp.innerHTML = element;
+                   documentListElement.appendChild(temp);
+                });
+            }*/
+        
+        </script>
+            
+    </body>
+</html>

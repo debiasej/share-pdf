@@ -25,23 +25,6 @@ static NSString *const appGroupId = @"group.debiasej.sharePDF";
     return fileURL;
 }
 
-- (NSArray<PDFDocument *> *) getAllPDFsInFileSystem {
-    NSArray<PDFDocument *> *pdfDocuments = nil;
-    NSURL *baseURL = [self appGroupContainerURL];
-
-    if (baseURL) {
-        NSError *error;
-        NSArray<NSURL *> *documentURLs = [self contentsOfDirectoryAtURL:baseURL
-             includingPropertiesForKeys:@[NSURLIsDirectoryKey]
-                                options:NSDirectoryEnumerationSkipsHiddenFiles
-                                  error:&error];
-        
-        if (documentURLs && documentURLs.count > 0)
-            pdfDocuments = [self arrayOfPDFDocumentsFromArrayOfFileNames: documentURLs];
-    }
-    return pdfDocuments;
-}
-
 -(NSURL *) appGroupContainerURL {
     
     NSURL *storagePathUrl = nil;
@@ -70,6 +53,23 @@ static NSString *const appGroupId = @"group.debiasej.sharePDF";
     }
     
     return storagePathUrl;
+}
+
+- (NSArray<PDFDocument *> *) getAllPDFsInFileSystem {
+    NSArray<PDFDocument *> *pdfDocuments = nil;
+    NSURL *baseURL = [self appGroupContainerURL];
+    
+    if (baseURL) {
+        NSError *error;
+        NSArray<NSURL *> *documentURLs = [self contentsOfDirectoryAtURL:baseURL
+                                             includingPropertiesForKeys:@[NSURLIsDirectoryKey]
+                                                                options:NSDirectoryEnumerationSkipsHiddenFiles
+                                                                  error:&error];
+        
+        if (documentURLs && documentURLs.count > 0)
+            pdfDocuments = [self arrayOfPDFDocumentsFromArrayOfFileNames: documentURLs];
+    }
+    return pdfDocuments;
 }
 
 - (NSArray<PDFDocument *> *)arrayOfPDFDocumentsFromArrayOfFileNames:(NSArray<NSURL *> *) documentURLs {
