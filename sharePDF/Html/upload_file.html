@@ -10,25 +10,19 @@
         <div id="documentList"></div>
         
         <script>
+            
+            $(document).ready(function() {
+                $('#documentList').on('click', 'a', function(event) {
+                    console.log("Clicked: " + event.target.text);
+                    window.webkit.messageHandlers.SharePDFObserver.postMessage(event.target.text);
+                });
+            });
+            
             function loadComponent(fileNamesArray) {
-                    
                 fileNamesArray.forEach(function(element, index) {
                     $('#documentList').append("<a id='doc-" + index + "'>" + element + "</a>");
                 });
             }
-                             
-            /*function loadComponent(fileNamesArray) {
-                
-                var documentListElement =
-                document.getElementById("documentList");
-                
-                var documentList =
-                fileNamesArray.forEach(function(element, index) {
-                   var temp = document.createElement("a");
-                   temp.innerHTML = element;
-                   documentListElement.appendChild(temp);
-                });
-            }*/
         
         </script>
             

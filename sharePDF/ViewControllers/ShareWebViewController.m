@@ -36,6 +36,9 @@
 }
 
 - (void)userContentController:(WKUserContentController *)userContentController didReceiveScriptMessage:(WKScriptMessage *)message {
+    
+    // Callback from javascript: window.webkit.messageHandlers.SharePDFObserver.postMessage(message)
+    NSString *text = (NSString *)message.body;
 }
 
 #pragma mark - Events
@@ -53,7 +56,11 @@
 
 - (void) setupWebView {
     WKWebViewConfiguration *configuration = [[WKWebViewConfiguration alloc] init];
-    //WKUserContentController *controller = [[WKUserContentController alloc] init];
+    WKUserContentController *controller = [[WKUserContentController alloc] init];
+    
+    // Add script message handler for function window.webkit.messageHandlers.SharePDFObserver.postMessage()
+    [controller addScriptMessageHandler:self name:@"SharePDFObserver"];
+    configuration.userContentController = controller;
     
     self.webView = [[WKWebView alloc] initWithFrame:CGRectMake(10, 20, CGRectGetWidth([UIScreen mainScreen].bounds) - 20, CGRectGetHeight([UIScreen mainScreen].bounds) - 84) configuration:configuration];
     self.webView.navigationDelegate = self;
