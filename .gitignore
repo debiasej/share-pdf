@@ -1,4 +1,4 @@
-tignore contributors: remember to update Global/Xcode.gitignore, Objective-C.gitignore & Swift.gitignore
+gitignore contributors: remember to update Global/Xcode.gitignore, Objective-C.gitignore & Swift.gitignore
 
 ## Build generated
 build/
@@ -58,3 +58,14 @@ fastlane/test_output
 # https://github.com/johnno1962/injectionforxcode
 
 iOSInjectionProject/
+
+# Server dependencies
+/server/node_modules
+/server/*/config.js
+/server/bundle.js
+
+#mongodb
+/mongodb/data/db/
+
+#logs
+*/*.log

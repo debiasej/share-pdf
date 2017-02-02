@@ -1,0 +1,40 @@
+{
+  "name": "redux-node-mongo-stater",
+  "version": "1.0.0",
+  "description": "Simple starter project for Redux/Node/Mongo app",
+  "main": "index.js",
+  "repository": "",
+  "scripts": {
+    "start": "rimraf bundle.js && webpack && npm run pro-server ",
+    "start-dev": "rimraf bundle.js && webpack && npm run dev-server",
+    "start-webpack": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
+    "pro-server": "node server.js",
+    "dev-server": "nodemon server.js"
+  },
+  "author": "Mario de Biase",
+  "license": "ISC",
+  "dependencies": {
+    "babel-core": "^6.2.1",
+    "babel-loader": "^6.2.0",
+    "babel-preset-es2015": "^6.1.18",
+    "babel-preset-react": "^6.1.18",
+    "body-parser": "^1.14.2",
+    "ejs": "^2.3.4",
+    "express": "^4.13.3",
+    "mongodb": "^2.1.4",
+    "react-addons-test-utils": "^0.14.7",
+    "webpack": "^1.12.9",
+    "webpack-dev-server": "^1.14.0"
+  },
+  "devDependencies": {
+    "babel-preset-stage-1": "^6.1.18",
+    "lodash": "^3.10.1",
+    "nodemon": "^1.8.1",
+    "react": "^0.14.3",
+    "react-dom": "^0.14.3",
+    "react-redux": "^4.0.0",
+    "react-router": "^2.0.1",
+    "redux": "^3.0.4",
+    "rimraf": "^2.5.4"
+  }
+}
