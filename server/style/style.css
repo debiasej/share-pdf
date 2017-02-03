@@ -1,0 +1,8 @@
+.uploader {
+    margin: 20px;
+    text-align: center;
+}
+
+.uploader input {
+    width: 75%;
+}
