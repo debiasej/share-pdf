@@ -1,6 +1,19 @@
 
-a {
+.title {
+    text-align: center;
+}
+
+a.doc {
     display: block;
-    margin-bottom: 100px;
-    font-size: 20pt;
+    margin: 20px;
+    font-size: 15pt;
+}
+
+.uploader {
+    margin: 20px;
+    text-align: center;
+}
+
+.uploader input {
+    width: 75%;
 }
