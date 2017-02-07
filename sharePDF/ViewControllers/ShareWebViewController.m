@@ -11,6 +11,9 @@
 #import "ShareWebViewController.h"
 #import "NSFileManager+FileUrlForDocumentNamed.h"
 
+static NSString *const directory = @"server";
+static NSString *const webAppName = @"index";
+
 @interface ShareWebViewController () <WKScriptMessageHandler, WKNavigationDelegate>
 
 @property (strong, nonatomic) WKWebView *webView;
@@ -68,14 +71,26 @@
 }
 
 - (void) loadHTMLFile {
-    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"upload_file" ofType:@"html"];
+    NSString *filePath = [[NSBundle mainBundle] pathForResource:webAppName ofType:@"html" inDirectory:directory];
     NSString *html = [NSString stringWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:nil];
-    [self.webView loadHTMLString:html baseURL:[NSBundle mainBundle].resourceURL];
+    
+    [self.webView loadHTMLString:html baseURL:[self getBaseURL:filePath]];
 }
+    
+- (NSURL*) getBaseURL:(NSString *) path {
+    NSRange range = [path rangeOfString:@"/" options:NSBackwardsSearch];
+    path = [path substringToIndex:range.location];
+    
+    path = [path stringByReplacingOccurrencesOfString:@" " withString:@"%20"];
+    path = [NSString stringWithFormat:@"file://%@/",path];
+    
+    return  [NSURL URLWithString:path];
+}
+    
 
 - (void) loadPDFList {
     NSString *pdfTitleJSON = [self parsePDFList:[self.pdfList valueForKey:@"title"]];
-    NSString *script = [NSString stringWithFormat:@"loadComponent(%@)", pdfTitleJSON];
+    NSString *script = [NSString stringWithFormat:@"loadPDFList(%@)", pdfTitleJSON];
     
     //script = @"loadComponent(['mario', 'mario', 'mario'])";
     
