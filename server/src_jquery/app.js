@@ -1,6 +1,10 @@
 
 $(document).ready(function() {
 
+    const baseUrl = "http://10.149.48.74";
+    const port = ":3000";
+    var PDFData = {id:"", base64String: ""};
+
     // Manage checkbox events
 
     $(document).on('change', ':checkbox', function() {
@@ -38,8 +42,10 @@ $(document).ready(function() {
         window.webkit.messageHandlers.SendDataObserver.postMessage("Hey WebView! Send the data of the selected file.");
     });
 
-    $(document).on( "uploadFile", function( event, stringBase64 ) {
-        $('#result').text(stringBase64);
+    $(document).on( "uploadFile", function( event, title, data ) {
+        PDFData.id = title;
+        PDFData.base64String = data;
+        uploadPDF(`${baseUrl}${port}/upload`, PDFData);
     });
 });
 
@@ -50,5 +56,19 @@ function loadPDFList(fileNamesArray) {
         const checkContainer = `<div class="checkbox-container">${checkbox}</div>`;
 
         $('#documentList').append(checkContainer);
+    });
+}
+
+function uploadPDF(url, data) {
+    return $.ajax({
+        url: url,
+        type: 'POST',
+        data: JSON.stringify(data),
+        contentType: 'application/json; charset=utf-8',
+        dataType: 'json',
+        async: false,
+        success: function(msg, status) {
+            $('#result').text(msg + " " + status);
+        }
     });
 }

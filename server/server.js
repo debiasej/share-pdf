@@ -51,7 +51,7 @@ app.get('/', (req, res) => {
 
 app.post('/upload', (req, res) => {
   var name = req.body.id;
-  var pdf = req.body.data;
+  var pdf = req.body.base64String;
 
   var pdf = pdf.replace('data:application/pdf;base64,', '');
 

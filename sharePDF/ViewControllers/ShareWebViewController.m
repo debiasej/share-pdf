@@ -19,6 +19,7 @@ static NSDataBase64EncodingOptions const NSDataBase64EncodingOneLineLength = 0;
 
 @property (strong, nonatomic) WKWebView *webView;
 @property (strong, nonatomic) NSMutableArray<PDFDocument *> *pdfList;
+@property (strong, nonatomic) PDFDocument *selectedPDF;
 @property (nonatomic, copy) NSString *currentPDFDataWithBase64Encoding;
 
 @end
@@ -47,8 +48,8 @@ static NSDataBase64EncodingOptions const NSDataBase64EncodingOneLineLength = 0;
         [self retrieveCurrentPDFData:(NSString *)message.body];
     
     } else if ( [message.name isEqualToString:@"SendDataObserver"] ) {
-        NSString *script = [NSString stringWithFormat:@"$(document).trigger('uploadFile', '%@');",
-                            self.currentPDFDataWithBase64Encoding];
+        NSString *script = [NSString stringWithFormat:@"$(document).trigger('uploadFile', ['%@', '%@']);",
+                            self.selectedPDF.title ,self.currentPDFDataWithBase64Encoding];
         [self evaluateJavascript:script];
     }
 }
@@ -99,8 +100,8 @@ static NSDataBase64EncodingOptions const NSDataBase64EncodingOneLineLength = 0;
 
 - (void) retrieveCurrentPDFData:(NSString *) fileName {
     
-    PDFDocument *selectedPDF = [self filterPDFListWithFileName:fileName];
-    [self openPDFDocument:selectedPDF withResult:^(NSData* pdfData) {
+    self.selectedPDF = [self filterPDFListWithFileName:fileName];
+    [self openPDFDocument:self.selectedPDF withResult:^(NSData* pdfData) {
         [self savePDFWithBase64Encoding:pdfData];
     }];
 }
