@@ -17,7 +17,7 @@ $(document).ready(function() {
     }
 
     function pdfDidSelected() {
-        window.webkit.messageHandlers.SharePDFObserver.postMessage($('input:checked').val());
+        window.webkit.messageHandlers.SelectedFileObserver.postMessage($('input:checked').val());
     }
 
 });

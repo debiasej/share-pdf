@@ -13,11 +13,13 @@
 
 static NSString *const directory = @"server";
 static NSString *const webAppName = @"index";
+static NSDataBase64EncodingOptions const NSDataBase64EncodingOneLineLength = 0;
 
 @interface ShareWebViewController () <WKScriptMessageHandler, WKNavigationDelegate>
 
 @property (strong, nonatomic) WKWebView *webView;
 @property (strong, nonatomic) NSMutableArray<PDFDocument *> *pdfList;
+@property (nonatomic, copy) NSString *currentPDFDataWithBase64Encoding;
 
 @end
 
@@ -40,8 +42,13 @@ static NSString *const webAppName = @"index";
 
 - (void)userContentController:(WKUserContentController *)userContentController didReceiveScriptMessage:(WKScriptMessage *)message {
     
-    // Callback from javascript: window.webkit.messageHandlers.SharePDFObserver.postMessage(message)
-    NSString *text = (NSString *)message.body;
+    // // Messages from javascript handlers
+    if ([message.name isEqualToString:@"SelectedFileObserver"]) {
+        [self retrieveCurrentPDFData:(NSString *)message.body];
+    
+    } else if ( [message.name isEqualToString:@"SendDataObserver"] ) {
+        
+    }
 }
 
 #pragma mark - Events
@@ -61,8 +68,9 @@ static NSString *const webAppName = @"index";
     WKWebViewConfiguration *configuration = [[WKWebViewConfiguration alloc] init];
     WKUserContentController *controller = [[WKUserContentController alloc] init];
     
-    // Add script message handler for function window.webkit.messageHandlers.SharePDFObserver.postMessage()
-    [controller addScriptMessageHandler:self name:@"SharePDFObserver"];
+    // Add handlers. For example, window.webkit.messageHandlers.SharePDFListObserver.postMessage()
+    [controller addScriptMessageHandler:self name:@"SelectedFileObserver"];
+    [controller addScriptMessageHandler:self name:@"SendDataObserver"];
     configuration.userContentController = controller;
     
     self.webView = [[WKWebView alloc] initWithFrame:CGRectMake(10, 20, CGRectGetWidth([UIScreen mainScreen].bounds) - 20, CGRectGetHeight([UIScreen mainScreen].bounds) - 84) configuration:configuration];
@@ -86,13 +94,59 @@ static NSString *const webAppName = @"index";
     
     return  [NSURL URLWithString:path];
 }
+
+- (void) retrieveCurrentPDFData:(NSString *) fileName {
     
+    PDFDocument *selectedPDF = [self filterPDFListWithFileName:fileName];
+    [self openPDFDocument:selectedPDF withResult:^(NSData* pdfData) {
+        [self savePDFWithBase64Encoding:pdfData];
+    }];
+}
+
+- (PDFDocument *) filterPDFListWithFileName:(NSString*) fileName {
+    
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"title == %@", fileName];
+    NSArray<PDFDocument *> *filteredArray = [self.pdfList filteredArrayUsingPredicate:predicate];
+    
+    return [filteredArray firstObject];
+}
+
+- (void) openPDFDocument:(PDFDocument *) pdfDocument withResult:(void (^)(NSData *pdfData))result {
+    
+    [pdfDocument openWithCompletionHandler:^(BOOL success) {
+        if (!success) {
+            NSLog(@"Failed to open %@", pdfDocument.title);
+            result(nil);
+        }
+        [pdfDocument closeWithCompletionHandler:^(BOOL success) {
+            if (!success) {
+                NSLog(@"Failed to close %@", pdfDocument.title);
+                result(nil);
+            }
+            result(pdfDocument.contents);
+        }];
+    }];
+}
+
+- (void) savePDFWithBase64Encoding:(NSData *) pdfData {
+    
+    if (pdfData) {
+        NSString *base64String = [pdfData base64EncodedStringWithOptions:NSDataBase64EncodingOneLineLength];
+        base64String = [@"data:application/pdf;base64," stringByAppendingString:base64String];
+        
+        self.currentPDFDataWithBase64Encoding = base64String;
+    }
+}
 
 - (void) loadPDFList {
     NSString *pdfTitleJSON = [self parsePDFList:[self.pdfList valueForKey:@"title"]];
     NSString *script = [NSString stringWithFormat:@"loadPDFList(%@)", pdfTitleJSON];
-    
-    //script = @"loadComponent(['mario', 'mario', 'mario'])";
+    [self evaluateJavascript:script];
+}
+
+#pragma mark - Methods to connect with javascript
+
+- (void) evaluateJavascript:(NSString *) script {
     
     [self.webView evaluateJavaScript:script completionHandler:^(NSString *result, NSError *error) {
         if (error) {
