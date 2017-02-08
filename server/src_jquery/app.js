@@ -1,9 +1,12 @@
 
 $(document).ready(function() {
 
+    // Manage checkbox events
+
     $(document).on('change', ':checkbox', function() {
         disableOthers.call(this);
         pdfDidSelected();
+        updateButtonAccessibility();
     });
 
     function disableOthers() {
@@ -20,6 +23,14 @@ $(document).ready(function() {
         window.webkit.messageHandlers.SelectedFileObserver.postMessage($('input:checked').val());
     }
 
+    function updateButtonAccessibility() {
+        var nothingIsChecked = $(':checkbox:checked').length == 0;
+
+        if(nothingIsChecked)
+            $('#upload-btn').attr('disabled', true);
+        else
+            $('#upload-btn').attr('disabled', false);
+    }
 });
 
 function loadPDFList(fileNamesArray) {
@@ -30,9 +41,4 @@ function loadPDFList(fileNamesArray) {
 
         $('#documentList').append(checkContainer);
     });
-}
-
-
-function API() {
-
 }
