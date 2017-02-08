@@ -31,6 +31,16 @@ $(document).ready(function() {
         else
             $('#upload-btn').attr('disabled', false);
     }
+
+    // Manage button events
+
+    $('#upload-btn').click(function(){
+        window.webkit.messageHandlers.SendDataObserver.postMessage("Hey WebView! Send the data of the selected file.");
+    });
+
+    $(document).on( "uploadFile", function( event, stringBase64 ) {
+        $('#result').text(stringBase64);
+    });
 });
 
 function loadPDFList(fileNamesArray) {

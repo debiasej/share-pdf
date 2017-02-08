@@ -47,7 +47,9 @@ static NSDataBase64EncodingOptions const NSDataBase64EncodingOneLineLength = 0;
         [self retrieveCurrentPDFData:(NSString *)message.body];
     
     } else if ( [message.name isEqualToString:@"SendDataObserver"] ) {
-        
+        NSString *script = [NSString stringWithFormat:@"$(document).trigger('uploadFile', '%@');",
+                            self.currentPDFDataWithBase64Encoding];
+        [self evaluateJavascript:script];
     }
 }
 
