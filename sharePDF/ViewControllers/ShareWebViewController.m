@@ -11,7 +11,7 @@
 #import "ShareWebViewController.h"
 #import "NSFileManager+FileUrlForDocumentNamed.h"
 
-static NSString *const directory = @"server";
+static NSString *const directory = @"www";
 static NSString *const webAppName = @"index";
 static NSDataBase64EncodingOptions const NSDataBase64EncodingOneLineLength = 0;
 

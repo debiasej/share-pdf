@@ -57,8 +57,8 @@ app.post('/upload', (req, res) => {
 
   fs.writeFile(name, pdf, 'base64', function(err) {
     if (err)
-      res.send({result: "ERROR: PDF document malformed"});
+      res.send({msg: "ERROR: PDF document malformed"});
     else
-      res.send({result: "OK"});
+      res.send({msg: "OK"});
   });
 });

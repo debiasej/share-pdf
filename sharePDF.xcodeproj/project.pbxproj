@@ -11,7 +11,6 @@
 		E11CC0321E40938B00650F97 /* Assets.xcassets in Sources */ = {isa = PBXBuildFile; fileRef = E1641E5A1E3A4B06007714F6 /* Assets.xcassets */; };
 		E11CC0351E40DFC100650F97 /* ShareWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E11CC0341E40DFC100650F97 /* ShareWebViewController.m */; };
 		E12A2B431E3F3FAD00C0E60F /* NSFileManager+FileUrlForDocumentNamed.m in Sources */ = {isa = PBXBuildFile; fileRef = E1641EA91E3B78C9007714F6 /* NSFileManager+FileUrlForDocumentNamed.m */; };
-		E158D32B1E4A0E4D00E56FD8 /* server in Resources */ = {isa = PBXBuildFile; fileRef = E158D32A1E4A0E4D00E56FD8 /* server */; };
 		E1641E4A1E3A4B06007714F6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E1641E491E3A4B06007714F6 /* main.m */; };
 		E1641E4D1E3A4B06007714F6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E1641E4C1E3A4B06007714F6 /* AppDelegate.m */; };
 		E1641E591E3A4B06007714F6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1641E571E3A4B06007714F6 /* Main.storyboard */; };
@@ -24,6 +23,7 @@
 		E1641EAA1E3B78C9007714F6 /* NSFileManager+FileUrlForDocumentNamed.m in Sources */ = {isa = PBXBuildFile; fileRef = E1641EA91E3B78C9007714F6 /* NSFileManager+FileUrlForDocumentNamed.m */; };
 		E1641EB81E3F21A0007714F6 /* PDFDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = E1641EB71E3F21A0007714F6 /* PDFDocument.m */; };
 		E1641EB91E3F21AB007714F6 /* PDFDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = E1641EB71E3F21A0007714F6 /* PDFDocument.m */; };
+		E1DF04A21E4B70B000A3A4BC /* www in Resources */ = {isa = PBXBuildFile; fileRef = E1DF04A11E4B70B000A3A4BC /* www */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,7 +54,6 @@
 		E11CC02E1E40763000650F97 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		E11CC0331E40DFC100650F97 /* ShareWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ShareWebViewController.h; path = ViewControllers/ShareWebViewController.h; sourceTree = "<group>"; };
 		E11CC0341E40DFC100650F97 /* ShareWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ShareWebViewController.m; path = ViewControllers/ShareWebViewController.m; sourceTree = "<group>"; };
-		E158D32A1E4A0E4D00E56FD8 /* server */ = {isa = PBXFileReference; lastKnownFileType = folder; path = server; sourceTree = SOURCE_ROOT; };
 		E1641E451E3A4B06007714F6 /* Share PDF.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Share PDF.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1641E491E3A4B06007714F6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E1641E4B1E3A4B06007714F6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -76,6 +75,7 @@
 		E1641EA91E3B78C9007714F6 /* NSFileManager+FileUrlForDocumentNamed.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSFileManager+FileUrlForDocumentNamed.m"; path = "Utils/NSFileManager+FileUrlForDocumentNamed.m"; sourceTree = "<group>"; };
 		E1641EB61E3F21A0007714F6 /* PDFDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PDFDocument.h; path = Model/PDFDocument.h; sourceTree = "<group>"; };
 		E1641EB71E3F21A0007714F6 /* PDFDocument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PDFDocument.m; path = Model/PDFDocument.m; sourceTree = "<group>"; };
+		E1DF04A11E4B70B000A3A4BC /* www */ = {isa = PBXFileReference; lastKnownFileType = folder; name = www; path = sharePDF/www; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +107,7 @@
 		E1641E3C1E3A4B06007714F6 = {
 			isa = PBXGroup;
 			children = (
+				E1DF04A11E4B70B000A3A4BC /* www */,
 				E1641E471E3A4B06007714F6 /* sharePDF */,
 				E1641E7E1E3A4CD0007714F6 /* Share Me */,
 				E1641E461E3A4B06007714F6 /* Products */,
@@ -126,7 +127,6 @@
 		E1641E471E3A4B06007714F6 /* sharePDF */ = {
 			isa = PBXGroup;
 			children = (
-				E158D32A1E4A0E4D00E56FD8 /* server */,
 				E1641EA71E3B77B7007714F6 /* Utils */,
 				E1641E981E3B5B53007714F6 /* ViewControllers */,
 				E1641E5A1E3A4B06007714F6 /* Assets.xcassets */,
@@ -293,8 +293,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1DF04A21E4B70B000A3A4BC /* www in Resources */,
 				E1641E5E1E3A4B06007714F6 /* LaunchScreen.storyboard in Resources */,
-				E158D32B1E4A0E4D00E56FD8 /* server in Resources */,
 				E1641E5B1E3A4B06007714F6 /* Assets.xcassets in Resources */,
 				E1641E591E3A4B06007714F6 /* Main.storyboard in Resources */,
 			);

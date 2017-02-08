@@ -67,8 +67,11 @@ function uploadPDF(url, data) {
         contentType: 'application/json; charset=utf-8',
         dataType: 'json',
         async: false,
-        success: function(msg, status) {
-            $('#result').text(msg.result + " " + status);
+        success: function(res, status) {
+            var resultMsg = `Upload: [${res.msg}]`;
+            var statusMsg = `Response Status: [${status}]`;
+            $('#result').text(resultMsg);
+            $('#status').text(statusMsg);
         }
     });
 }

@@ -1,0 +1,23 @@
+
+.title {
+    text-align: center;
+    margin: 20px;
+}
+
+.checkbox-container {
+    margin: 20px 40px;
+    font-size: 15pt;
+}
+
+.btn-container {
+    text-align: center;
+}
+
+.btn {
+    width: 80%;
+}
+
+.result-container {
+  margin: 35px;
+  background-color: lightgreen;
+}
