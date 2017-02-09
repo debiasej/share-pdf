@@ -26,14 +26,15 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cVc-1W-GGw">
                                         <rect key="frame" x="0.0" y="0.0" width="315" height="60"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Share Me" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e57-Lm-nGI">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Share PDF" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e57-Lm-nGI">
                                                 <rect key="frame" x="20" y="11.5" width="275" height="37"/>
+                                                <color key="backgroundColor" red="0.29019607843137252" green="0.70588235294117641" blue="0.92549019607843142" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="27"/>
-                                                <color key="textColor" red="0.79215686269999996" green="0.95294117649999999" blue="0.066666666669999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
-                                        <color key="backgroundColor" red="0.46160434830000002" green="0.30469471770000001" blue="0.1525366702" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.291118443" green="0.70627158879999996" blue="0.92700546979999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstItem="e57-Lm-nGI" firstAttribute="centerY" secondItem="cVc-1W-GGw" secondAttribute="centerY" id="2PF-yK-psf"/>
                                             <constraint firstItem="e57-Lm-nGI" firstAttribute="leading" secondItem="cVc-1W-GGw" secondAttribute="leading" constant="20" id="BOw-8R-Msd"/>
@@ -46,13 +47,12 @@
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Zi-Da-fgw">
                                                 <rect key="frame" x="40" y="40" width="235" height="45"/>
-                                                <color key="backgroundColor" red="0.79215686269999996" green="0.95294117649999999" blue="0.066666666669999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="45" id="c9c-vZ-6qT"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
+                                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="19"/>
                                                 <state key="normal" title="Share this document">
-                                                    <color key="titleColor" red="0.46160434830000002" green="0.30469471770000001" blue="0.1525366702" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="titleColor" red="0.291118443" green="0.70627158879999996" blue="0.92700546979999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="shareButtonTapped:" destination="j1y-V4-xli" eventType="touchUpInside" id="jAV-M3-fAp"/>

@@ -1,12 +1,20 @@
 
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
 .title {
     text-align: center;
     margin: 40px 20px;
 }
 
 .checkbox-container {
-  margin: 20px 60px;
-  font-size: 15pt;
+  margin: 20px 40px;
+  font-size: 12pt;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .btn-container {
@@ -21,6 +29,15 @@
     position: fixed;
     bottom: 6%;
     left: 10%;
+}
+
+.btn-primary {
+    background-color: #4ab4ec;
+    border-color: #419ed0;
+}
+
+.btn.disabled, .btn[disabled], fieldset[disabled] .btn {
+  opacity: 0;
 }
 
 .result-container {
