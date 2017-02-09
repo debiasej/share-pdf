@@ -69,7 +69,11 @@ static NSDataBase64EncodingOptions const NSDataBase64EncodingOneLineLength = 0;
     [controller addScriptMessageHandler:self name:@"SendDataObserver"];
     configuration.userContentController = controller;
     
-    self.webView = [[WKWebView alloc] initWithFrame:CGRectMake(10, 20, CGRectGetWidth([UIScreen mainScreen].bounds) - 20, CGRectGetHeight([UIScreen mainScreen].bounds) - 84) configuration:configuration];
+    CGFloat screenWidth =  [UIScreen mainScreen].bounds.size.width;
+    CGFloat screenHeight = [UIScreen mainScreen].bounds.size.height;
+    CGRect frame = CGRectMake(0, 0, screenWidth, screenHeight);
+    self.webView = [[WKWebView alloc] initWithFrame:frame configuration:configuration];
+    
     self.webView.navigationDelegate = self;
     [self.view addSubview:self.webView];
 }
