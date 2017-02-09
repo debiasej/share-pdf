@@ -38,7 +38,7 @@ static NSDataBase64EncodingOptions const NSDataBase64EncodingOneLineLength = 0;
 }
 
 - (void) webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation {
-    //[self loadPDFList];
+    [self loadPDFList];
 }
 
 - (void)userContentController:(WKUserContentController *)userContentController didReceiveScriptMessage:(WKScriptMessage *)message {
@@ -57,7 +57,7 @@ static NSDataBase64EncodingOptions const NSDataBase64EncodingOneLineLength = 0;
 #pragma mark - Events
 
 - (IBAction)loadDocumentsButtonTapped:(id)sender {
-    [self loadPDFList];
+    //[self loadPDFList];
 }
 
 #pragma mark - Private methods

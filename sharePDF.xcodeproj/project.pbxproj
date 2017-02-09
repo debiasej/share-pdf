@@ -19,7 +19,6 @@
 		E1641E811E3A4CD0007714F6 /* ShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1641E801E3A4CD0007714F6 /* ShareViewController.m */; };
 		E1641E841E3A4CD0007714F6 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1641E821E3A4CD0007714F6 /* MainInterface.storyboard */; };
 		E1641E881E3A4CD0007714F6 /* Share Me.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = E1641E7D1E3A4CD0007714F6 /* Share Me.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		E1641EA61E3B5E4B007714F6 /* SharePDFViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1641EA51E3B5E4B007714F6 /* SharePDFViewController.m */; };
 		E1641EAA1E3B78C9007714F6 /* NSFileManager+FileUrlForDocumentNamed.m in Sources */ = {isa = PBXBuildFile; fileRef = E1641EA91E3B78C9007714F6 /* NSFileManager+FileUrlForDocumentNamed.m */; };
 		E1641EB81E3F21A0007714F6 /* PDFDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = E1641EB71E3F21A0007714F6 /* PDFDocument.m */; };
 		E1641EB91E3F21AB007714F6 /* PDFDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = E1641EB71E3F21A0007714F6 /* PDFDocument.m */; };
@@ -69,8 +68,6 @@
 		E1641E851E3A4CD0007714F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E1641E8D1E3B296F007714F6 /* Share Me.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Share Me.entitlements"; sourceTree = "<group>"; };
 		E1641E8E1E3B29C9007714F6 /* sharePDF.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = sharePDF.entitlements; sourceTree = "<group>"; };
-		E1641EA41E3B5E4B007714F6 /* SharePDFViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SharePDFViewController.h; path = ViewControllers/SharePDFViewController.h; sourceTree = "<group>"; };
-		E1641EA51E3B5E4B007714F6 /* SharePDFViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SharePDFViewController.m; path = ViewControllers/SharePDFViewController.m; sourceTree = "<group>"; };
 		E1641EA81E3B78C9007714F6 /* NSFileManager+FileUrlForDocumentNamed.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSFileManager+FileUrlForDocumentNamed.h"; path = "Utils/NSFileManager+FileUrlForDocumentNamed.h"; sourceTree = "<group>"; };
 		E1641EA91E3B78C9007714F6 /* NSFileManager+FileUrlForDocumentNamed.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSFileManager+FileUrlForDocumentNamed.m"; path = "Utils/NSFileManager+FileUrlForDocumentNamed.m"; sourceTree = "<group>"; };
 		E1641EB61E3F21A0007714F6 /* PDFDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PDFDocument.h; path = Model/PDFDocument.h; sourceTree = "<group>"; };
@@ -182,8 +179,6 @@
 		E1641E981E3B5B53007714F6 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				E1641EA41E3B5E4B007714F6 /* SharePDFViewController.h */,
-				E1641EA51E3B5E4B007714F6 /* SharePDFViewController.m */,
 				E11CC0331E40DFC100650F97 /* ShareWebViewController.h */,
 				E11CC0341E40DFC100650F97 /* ShareWebViewController.m */,
 			);
@@ -318,7 +313,6 @@
 			files = (
 				E1641EAA1E3B78C9007714F6 /* NSFileManager+FileUrlForDocumentNamed.m in Sources */,
 				E1641E4D1E3A4B06007714F6 /* AppDelegate.m in Sources */,
-				E1641EA61E3B5E4B007714F6 /* SharePDFViewController.m in Sources */,
 				E11CC0351E40DFC100650F97 /* ShareWebViewController.m in Sources */,
 				E1641EB81E3F21A0007714F6 /* PDFDocument.m in Sources */,
 				E1641E4A1E3A4B06007714F6 /* main.m in Sources */,
