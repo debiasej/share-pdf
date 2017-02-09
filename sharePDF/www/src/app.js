@@ -59,6 +59,10 @@ function loadPDFList(fileNamesArray) {
     });
 }
 
+function clearCheckedInputs() {
+  $("input:checkbox:checked").trigger('click')
+}
+
 function uploadPDF(url, data) {
     return $.ajax({
         url: url,
@@ -72,6 +76,7 @@ function uploadPDF(url, data) {
             var statusMsg = `Response Status: [${status}]`;
             $('#result').text(resultMsg);
             $('#status').text(statusMsg);
+            clearCheckedInputs();
         }
     });
 }
