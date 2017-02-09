@@ -8,9 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ShareWebViewController : UIViewController
-
-@property (nonatomic, copy) NSString* pdfDocument;
-@property (weak, nonatomic) IBOutlet UILabel *documentTitle;
+@interface SharePDFWebViewController : UIViewController
 
 @end

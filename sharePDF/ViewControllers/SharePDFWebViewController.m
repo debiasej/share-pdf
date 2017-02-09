@@ -8,14 +8,14 @@
 
 #import <UIKit/UIKit.h>
 #import <WebKit/WebKit.h>
-#import "ShareWebViewController.h"
+#import "SharePDFWebViewController.h"
 #import "NSFileManager+FileUrlForDocumentNamed.h"
 
 static NSString *const directory = @"www";
 static NSString *const webAppName = @"index";
 static NSDataBase64EncodingOptions const NSDataBase64EncodingOneLineLength = 0;
 
-@interface ShareWebViewController () <WKScriptMessageHandler, WKNavigationDelegate>
+@interface SharePDFWebViewController () <WKScriptMessageHandler, WKNavigationDelegate>
 
 @property (strong, nonatomic) WKWebView *webView;
 @property (strong, nonatomic) NSMutableArray<PDFDocument *> *pdfList;
@@ -24,14 +24,13 @@ static NSDataBase64EncodingOptions const NSDataBase64EncodingOneLineLength = 0;
 
 @end
 
-@implementation ShareWebViewController
+@implementation SharePDFWebViewController
 
 #pragma mark - Life cycle methods
 
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    self.documentTitle.text = self.pdfDocument;
     [self readPDFsFromFileSystem];
     [self setupWebView];
     [self loadHTMLFile];
@@ -52,12 +51,6 @@ static NSDataBase64EncodingOptions const NSDataBase64EncodingOneLineLength = 0;
                             self.selectedPDF.title ,self.currentPDFDataWithBase64Encoding];
         [self evaluateJavascript:script];
     }
-}
-
-#pragma mark - Events
-
-- (IBAction)loadDocumentsButtonTapped:(id)sender {
-    //[self loadPDFList];
 }
 
 #pragma mark - Private methods
