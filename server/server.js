@@ -30,9 +30,11 @@ var allowCrossDomain = function(req, res, next) {
   }
 };
 
-app.use(bodyParser.json());
+//app.use(bodyParser.json());
 app.use(express.static(__dirname));
 app.use(allowCrossDomain);
+app.use( bodyParser.json({limit: '50mb'}) );
+
 
 app.get('/user', (req, res) => {
   db.collection('users').find().toArray((err, result) => {
