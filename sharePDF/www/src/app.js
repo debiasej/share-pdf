@@ -61,7 +61,7 @@ function loadPDFList(fileNamesArray) {
         const checkContainer = `<div class="checkbox-container">${checkbox}</div>`;
         $('#document-list').append(checkContainer);
     });
-    
+
     updateListHeight();
 }
 
@@ -72,7 +72,11 @@ function updateListHeight() {
 }
 
 function clearCheckedInputs() {
-  $("input:checkbox:checked").trigger('click')
+  $("input:checkbox:checked").trigger('click');
+  setTimeout(function() {
+    $('#result').text("");
+    $('#status').text("");
+  }, 2000 );
 }
 
 function uploadPDF(url, data) {
