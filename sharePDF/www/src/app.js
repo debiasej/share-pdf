@@ -1,7 +1,7 @@
 
 $(document).ready(function() {
 
-    const baseUrl = "http://10.149.48.74";
+    const baseUrl = "http://192.168.1.36";
     const port = ":3000";
     var PDFData = {id:"", base64String: ""};
 
@@ -47,9 +47,15 @@ $(document).ready(function() {
         PDFData.base64String = data;
         uploadPDF(`${baseUrl}${port}/upload`, PDFData);
     });
+
+    $('.title').click(function() {
+      window.webkit.messageHandlers.UpdateListObserver.postMessage("Hey WebView! Update the list of documents.");
+    });
 });
 
 function loadPDFList(fileNamesArray) {
+    $('#document-list').empty();
+
     fileNamesArray.forEach(function(element, index) {
         const checkbox = `<input class="doc" id="doc-${index}" type="checkbox" value="${element}"> ${element}`;
         const checkContainer = `<div class="checkbox-container">${checkbox}</div>`;

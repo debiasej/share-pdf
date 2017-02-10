@@ -31,8 +31,8 @@ static NSDataBase64EncodingOptions const NSDataBase64EncodingOneLineLength = 0;
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    [self readPDFsFromFileSystem];
     [self setupWebView];
+    [self readPDFsFromFileSystem];
     [self loadHTMLFile];
 }
 
@@ -47,18 +47,18 @@ static NSDataBase64EncodingOptions const NSDataBase64EncodingOneLineLength = 0;
         [self retrieveCurrentPDFData:(NSString *)message.body];
     
     } else if ( [message.name isEqualToString:@"SendDataObserver"] ) {
-        NSString *script = [NSString stringWithFormat:@"$(document).trigger('uploadFile', ['%@', '%@']);",
+        NSString *script = [NSString
+                            stringWithFormat:@"$(document).trigger('uploadFile', ['%@', '%@']);",
                             self.selectedPDF.title ,self.currentPDFDataWithBase64Encoding];
         [self evaluateJavascript:script];
+        
+    } else if ([message.name isEqualToString:@"UpdateListObserver"] ) {
+         [self readPDFsFromFileSystem];
+         [self loadPDFList];
     }
 }
 
 #pragma mark - Private methods
-
-- (void) readPDFsFromFileSystem {
-    NSFileManager *fileManager = [NSFileManager defaultManager];
-    self.pdfList = [[fileManager getAllPDFsInFileSystem] mutableCopy];
-}
 
 - (void) setupWebView {
     WKWebViewConfiguration *configuration = [[WKWebViewConfiguration alloc] init];
@@ -67,6 +67,7 @@ static NSDataBase64EncodingOptions const NSDataBase64EncodingOneLineLength = 0;
     // Add handlers. For example, window.webkit.messageHandlers.SharePDFListObserver.postMessage()
     [controller addScriptMessageHandler:self name:@"SelectedFileObserver"];
     [controller addScriptMessageHandler:self name:@"SendDataObserver"];
+    [controller addScriptMessageHandler:self name:@"UpdateListObserver"];
     configuration.userContentController = controller;
     
     CGFloat screenWidth =  [UIScreen mainScreen].bounds.size.width;
@@ -78,13 +79,18 @@ static NSDataBase64EncodingOptions const NSDataBase64EncodingOneLineLength = 0;
     [self.view addSubview:self.webView];
 }
 
+- (void) readPDFsFromFileSystem {
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    self.pdfList = [[fileManager getAllPDFsInFileSystem] mutableCopy];
+}
+
 - (void) loadHTMLFile {
     NSString *filePath = [[NSBundle mainBundle] pathForResource:webAppName ofType:@"html" inDirectory:directory];
     NSString *html = [NSString stringWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:nil];
     
     [self.webView loadHTMLString:html baseURL:[self getBaseURL:filePath]];
 }
-    
+
 - (NSURL*) getBaseURL:(NSString *) path {
     NSRange range = [path rangeOfString:@"/" options:NSBackwardsSearch];
     path = [path substringToIndex:range.location];
@@ -93,6 +99,12 @@ static NSDataBase64EncodingOptions const NSDataBase64EncodingOneLineLength = 0;
     path = [NSString stringWithFormat:@"file://%@/",path];
     
     return  [NSURL URLWithString:path];
+}
+
+- (void) loadPDFList {
+    NSString *pdfTitleJSON = [self parsePDFList:[self.pdfList valueForKey:@"title"]];
+    NSString *script = [NSString stringWithFormat:@"loadPDFList(%@)", pdfTitleJSON];
+    [self evaluateJavascript:script];
 }
 
 - (void) retrieveCurrentPDFData:(NSString *) fileName {
@@ -136,12 +148,6 @@ static NSDataBase64EncodingOptions const NSDataBase64EncodingOneLineLength = 0;
         
         self.currentPDFDataWithBase64Encoding = base64String;
     }
-}
-
-- (void) loadPDFList {
-    NSString *pdfTitleJSON = [self parsePDFList:[self.pdfList valueForKey:@"title"]];
-    NSString *script = [NSString stringWithFormat:@"loadPDFList(%@)", pdfTitleJSON];
-    [self evaluateJavascript:script];
 }
 
 #pragma mark - Methods to connect with javascript
