@@ -57,7 +57,8 @@ html, body {
 }
 
 .btn.disabled, .btn[disabled], fieldset[disabled] .btn {
-  opacity: 0;
+  opacity: 0.2;
+  background-color:black;
 }
 
 .result-container {
