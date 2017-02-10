@@ -71,14 +71,6 @@ function updateListHeight() {
   $('#document-list').height( screenHeight - headerAndFooterHeight);
 }
 
-function clearCheckedInputs() {
-  $("input:checkbox:checked").trigger('click');
-  setTimeout(function() {
-    $('#result').text("");
-    $('#status').text("");
-  }, 2000 );
-}
-
 function uploadPDF(url, data) {
     return $.ajax({
         url: url,
@@ -87,12 +79,36 @@ function uploadPDF(url, data) {
         contentType: 'application/json; charset=utf-8',
         dataType: 'json',
         async: false,
-        success: function(res, status) {
-            var resultMsg = `Upload: [${res.msg}]`;
-            var statusMsg = `Response Status: [${status}]`;
-            $('#result').text(resultMsg);
-            $('#status').text(statusMsg);
-            clearCheckedInputs();
+        timeout: 30000,
+        success: function(data, status) {
+          responseHandler(data, status);
         }
-    });
+    }).fail(function(xhr, status, errorThrown) {
+       responseHandler(xhr, status, errorThrown);
+   });
+}
+
+function responseHandler(res, textStatus, errorThrown) {
+  var resultMsg = `Upload: [${res.msg}]`;
+  var statusMsg = `Response Status: [${textStatus}]`;
+  var colorMsg =  'lightgreen';
+
+  if (res.msg != "OK") {
+    resultMsg = `Upload: ${textStatus}`;
+    statusMsg = `Response Code: ${res.status} Status: ${errorThrown}`;
+    colorMsg =  "orangered";
+  }
+
+  $('#result').text(resultMsg);
+  $('#status').text(statusMsg);
+  $('.result-container').css('background-color', colorMsg);
+  clearCheckedInputs();
+}
+
+function clearCheckedInputs() {
+  $("input:checkbox:checked").trigger('click');
+  setTimeout(function() {
+    $('#result').text("");
+    $('#status').text("");
+  }, 2000 );
 }
