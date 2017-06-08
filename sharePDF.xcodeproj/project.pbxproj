@@ -244,8 +244,8 @@
 				TargetAttributes = {
 					E1641E441E3A4B06007714F6 = {
 						CreatedOnToolsVersion = 8.2;
-						DevelopmentTeam = BHTSW5LM22;
-						ProvisioningStyle = Manual;
+						DevelopmentTeam = MTKLRYPBZZ;
+						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
 								enabled = 1;
@@ -254,8 +254,8 @@
 					};
 					E1641E7C1E3A4CD0007714F6 = {
 						CreatedOnToolsVersion = 8.2;
-						DevelopmentTeam = BHTSW5LM22;
-						ProvisioningStyle = Manual;
+						DevelopmentTeam = MTKLRYPBZZ;
+						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
 								enabled = 1;
@@ -389,7 +389,6 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Alberto Ballesteros Marin (AZK9P4R8Q4)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
@@ -438,7 +437,6 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Alberto Ballesteros Marin (AZK9P4R8Q4)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -465,16 +463,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = sharePDF/sharePDF.entitlements;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = BHTSW5LM22;
+				DEVELOPMENT_TEAM = MTKLRYPBZZ;
 				INFOPLIST_FILE = sharePDF/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				"OTHER_LDFLAGS[arch=*]" = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.avantgarde.share-pdf";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.debiasej.Share-PDF";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "4e2242b7-655b-4f17-8181-25864fdc433e";
-				PROVISIONING_PROFILE_SPECIFIER = "Develop Share Pdf";
 			};
 			name = Debug;
 		};
@@ -483,15 +478,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = sharePDF/sharePDF.entitlements;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = BHTSW5LM22;
+				DEVELOPMENT_TEAM = MTKLRYPBZZ;
 				INFOPLIST_FILE = sharePDF/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.avantgarde.share-pdf";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.debiasej.Share-PDF";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "4e2242b7-655b-4f17-8181-25864fdc433e";
-				PROVISIONING_PROFILE_SPECIFIER = "Develop Share Pdf";
 			};
 			name = Release;
 		};
@@ -501,14 +493,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "";
 				CODE_SIGN_ENTITLEMENTS = "Share Me/Share Me.entitlements";
-				DEVELOPMENT_TEAM = BHTSW5LM22;
+				DEVELOPMENT_TEAM = MTKLRYPBZZ;
 				INFOPLIST_FILE = "Share Me/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.avantgarde.share-pdf.share-me";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.debiasej.Share-PDF.Share-Me";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "8690ba26-4cd7-4e81-94ad-f70280195d43";
-				PROVISIONING_PROFILE_SPECIFIER = "Develop Share Me";
 				SKIP_INSTALL = YES;
 			};
 			name = Debug;
@@ -519,14 +509,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "";
 				CODE_SIGN_ENTITLEMENTS = "Share Me/Share Me.entitlements";
-				DEVELOPMENT_TEAM = BHTSW5LM22;
+				DEVELOPMENT_TEAM = MTKLRYPBZZ;
 				INFOPLIST_FILE = "Share Me/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.avantgarde.share-pdf.share-me";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.debiasej.Share-PDF.Share-Me";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "8690ba26-4cd7-4e81-94ad-f70280195d43";
-				PROVISIONING_PROFILE_SPECIFIER = "Develop Share Me";
 				SKIP_INSTALL = YES;
 			};
 			name = Release;

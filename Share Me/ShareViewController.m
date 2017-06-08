@@ -10,8 +10,7 @@
 #import "NSFileManager+FileUrlForDocumentNamed.h"
 #import "PdfDocument.h"
 
-//static NSString *const appGroupId = @"group.debiasej.sharePDF";
-static NSString *const appGroupId = @"group.avantgarde.Share-PDF";
+static NSString *const appGroupId = @"group.debiasej.sharePDF";
 static NSString *const pfdFileExtension = @"com.adobe.pdf";
 static NSString *const dictKey = @"dictPdf";
 

@@ -8,8 +8,7 @@
 
 #import "NSFileManager+FileUrlForDocumentNamed.h"
 
-//static NSString *const appGroupId = @"group.debiasej.sharePDF";
-static NSString *const appGroupId = @"group.avantgarde.Share-PDF";
+static NSString *const appGroupId = @"group.debiasej.sharePDF";
 
 @implementation NSFileManager (FileUrlForDocumentNamed)
 

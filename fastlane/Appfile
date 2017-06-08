@@ -1,0 +1,8 @@
+app_identifier "com.avantgarde.share-pdf" # The bundle identifier of your app
+apple_id "repository@avantgardeit.es" # Your Apple email address
+itunes_connect_id "repository@avantgardeit.es"
+
+team_id "BHTSW5LM22" # Developer Portal Team ID
+
+# you can even provide different app identifiers, Apple IDs and team names per lane:
+# More information: https://github.com/fastlane/fastlane/blob/master/fastlane/docs/Appfile.md
