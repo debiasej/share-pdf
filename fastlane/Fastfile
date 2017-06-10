@@ -27,6 +27,7 @@ platform :ios do
   
   lane :beta do
     # build your iOS app
+    #increment_version_number_in_plist
     gym(
       #silent: true,
       configuration: "Debug",
