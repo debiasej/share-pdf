@@ -4,4 +4,5 @@ This is a POC to show how to save documents in the app's sandbox directory using
 
 This is the bidirectional communication schema:
 ![Image](http://www.joshuakehn.com/assets/images/WKWebView.png/highlevel.png)
+
 For further info, read this [article](http://www.joshuakehn.com/2014/10/29/using-javascript-with-wkwebview-in-ios-8.html).
